@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Willing & Able — Cabinet d'avocats pluridisciplinaire et laboratoire du droit.">
+<title>Willing & Able — Laboratoire du droit</title>
+
+<style>
+:root {
+  --black: #202020;
+  --gold: #b39765;
+  --white: #ffffff;
+  --cream: #faf9f6;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--black);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid #eee;
+  padding: 20px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav a:hover { color: var(--gold); }
+
+button {
+  background: transparent;
+  border: 1px solid var(--gold);
+  padding: 9px 13px;
+  cursor: pointer;
+  color: var(--black);
+}
+
+button:hover {
+  background: var(--gold);
+  color: white;
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-logo {
+  width: min(350px, 80%);
+  height: auto;
+  margin-bottom: 25px;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 76px);
+  letter-spacing: 7px;
+  margin: 10px 0;
+}
+
+.subtitle {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--gold);
+}
+
+.tagline {
+  margin-top: 35px;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-style: italic;
+}
+
+section {
+  padding: 100px 10%;
+  scroll-margin-top: 90px;
+}
+
+section:nth-of-type(even) {
+  background: var(--cream);
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: 30px;
+}
+
+.gold-line {
+  width: 55px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 35px;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+}
+
+.etik-logo {
+  display: block;
+  max-width: 430px;
+  width: 100%;
+  height: auto;
+  margin: 35px auto;
+}
+
+.contact a {
+  color: var(--black);
+}
+
+footer {
+  padding: 45px 8%;
+  text-align: center;
+  background: #202020;
+  color: #ddd;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+footer p { color: #ccc; }
+
+@media(max-width: 800px) {
+  header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a { font-size: 11px; }
+
+  section { padding: 65px 7%; }
+
+  h1 { letter-spacing: 3px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">W&A</div>
+
+  <nav>
+    <a href="#accueil" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="#cabinet" data-fr="Le cabinet" data-en="The Firm">Le cabinet</a>
+    <a href="#expertises" data-fr="Expertises" data-en="Expertise">Expertises</a>
+    <a href="#laboratoire" data-fr="Laboratoire" data-en="Innovation Lab">Laboratoire</a>
+    <a href="#publications" data-fr="Publications" data-en="Insights">Publications</a>
+    <a href="#contact">Contact</a>
+    <button type="button" id="language" aria-label="Change language">EN</button>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="accueil">
+
+  <img src="Logo.png" alt="Logo Willing & Able" class="hero-logo">
+
+  <h1>WILLING & ABLE</h1>
+
+  <div class="subtitle"
+       data-fr="Laboratoire du droit"
+       data-en="Legal Innovation Lab">
+    Laboratoire du droit
+  </div>
+
+  <div class="tagline"
+       data-fr="Le droit en mouvement."
+       data-en="Law in motion.">
+    Le droit en mouvement.
+  </div>
+
+</section>
+
+<section id="cabinet">
+  <div class="container">
+
+    <h2 data-fr="Le cabinet" data-en="The Firm">Le cabinet</h2>
+    <div class="gold-line"></div>
+
+    <p data-fr="Willing & Able est un cabinet d'avocats pluridisciplinaire qui place l'exigence juridique, l'indépendance d'esprit et l'innovation au cœur de son approche."
+       data-en="Willing & Able is a multidisciplinary law firm combining legal excellence, independent thinking and innovation.">
+      Willing & Able est un cabinet d'avocats pluridisciplinaire qui place l'exigence juridique, l'indépendance d'esprit et l'innovation au cœur de son approche.
+    </p>
+
+    <p data-fr="Le cabinet associe une pratique rigoureuse du droit à une réflexion permanente sur les méthodes et les outils de la profession."
+       data-en="The firm combines rigorous legal practice with a continuous exploration of professional methods and technologies.">
+      Le cabinet associe une pratique rigoureuse du droit à une réflexion permanente sur les méthodes et les outils de la profession.
+    </p>
+
+  </div>
+</section>
+
+<section id="expertises">
+  <div class="container">
+
+    <h2 data-fr="Nos expertises" data-en="Our Expertise">Nos expertises</h2>
+    <div class="gold-line"></div>
+
+    <p data-fr="Cabinet pluridisciplinaire, Willing & Able accompagne ses clients dans l'analyse de leurs problématiques juridiques, la définition de stratégies adaptées et la défense de leurs intérêts."
+       data-en="As a multidisciplinary law firm, Willing & Able assists its clients in analysing legal issues, developing appropriate strategies and protecting their interests.">
+      Cabinet pluridisciplinaire, Willing & Able accompagne ses clients dans l'analyse de leurs problématiques juridiques, la définition de stratégies adaptées et la défense de leurs intérêts.
+    </p>
+
+  </div>
+</section>
+
+<section id="laboratoire">
+  <div class="container">
+
+    <h2 data-fr="Laboratoire du droit" data-en="Legal Innovation Lab">
+      Laboratoire du droit
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <p data-fr="L'innovation fait partie intégrante de l'identité de Willing & Able. Le cabinet explore les possibilités offertes par les technologies numériques pour faire évoluer les méthodes de travail des professionnels du droit."
+       data-en="Innovation is an integral part of Willing & Able's identity. The firm explores how digital technologies can contribute to the evolution of legal working methods.">
+      L'innovation fait partie intégrante de l'identité de Willing & Able. Le cabinet explore les possibilités offertes par les technologies numériques pour faire évoluer les méthodes de travail des professionnels du droit.
+    </p>
+
+    <img src="ETIK.png" alt="ETI/K — Espace de Travail Intelligent" class="etik-logo">
+
+    <h3>ETI/K Avocat</h3>
+
+    <p data-fr="Développé par le fondateur de Willing & Able, ETI/K Avocat est un progiciel né de la pratique du droit et d'une réflexion sur les outils numériques de la profession."
+       data-en="Developed by the founder of Willing & Able, ETI/K Avocat is a software solution inspired by legal practice and a reflection on the profession's digital tools.">
+      Développé par le fondateur de Willing & Able, ETI/K Avocat est un progiciel né de la pratique du droit et d'une réflexion sur les outils numériques de la profession.
+    </p>
+
+  </div>
+</section>
+
+<section id="publications">
+  <div class="container">
+
+    <h2 data-fr="Publications" data-en="Insights">Publications</h2>
+    <div class="gold-line"></div>
+
+    <p data-fr="Cet espace accueillera les analyses, réflexions et publications du cabinet."
+       data-en="This section will feature the firm's legal analyses, perspectives and publications.">
+      Cet espace accueillera les analyses, réflexions et publications du cabinet.
+    </p>
+
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+
+    <h2>Contact</h2>
+    <div class="gold-line"></div>
+
+    <h3>Willing & Able</h3>
+
+    <p>
+      114-2-6, avenue du Coq<br>
+      75009 Paris — France
+    </p>
+
+    <p>
+      <span data-fr="Téléphone" data-en="Phone">Téléphone</span> :
+      <a href="tel:+33155502121">01 55 50 21 21</a><br>
+
+      Fax : 01 55 50 21 22<br>
+
+      Email :
+      <a href="mailto:contact@willing-able.fr">contact@willing-able.fr</a>
+    </p>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div>WILLING & ABLE — LABORATOIRE DU DROIT</div>
+
+  <p>
+    SELARL au capital de 1 000 € —
+    RCS Paris 894 031 665
+  </p>
+
+  <p>© <span id="year"></span> Willing & Able</p>
+</footer>
+
+<script>
+const button = document.getElementById("language");
+let currentLanguage = "fr";
+
+button.addEventListener("click", () => {
+  currentLanguage = currentLanguage === "fr" ? "en" : "fr";
+
+  document.documentElement.lang = currentLanguage;
+
+  document.querySelectorAll("[data-fr][data-en]").forEach(element => {
+    element.textContent = element.dataset[currentLanguage];
+  });
+
+  button.textContent = currentLanguage === "fr" ? "EN" : "FR";
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
