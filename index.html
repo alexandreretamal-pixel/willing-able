@@ -126,10 +126,10 @@ button:hover {
 /* Mouettes superposées au croquis */
 .hero-mouettes {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+   top: 25%;
+left: 25%;
+   width: 50%;
+height: 50%;
     object-fit: contain;
     pointer-events: none;
     z-index: 1;
@@ -161,23 +161,13 @@ button:hover {
 }
 
 @keyframes apparitionCroquis {
-    0% {
-        opacity: 1;
-        clip-path: polygon(
-            0 0, 0 0, 0 100%, 0 100%,
-            100% 100%, 100% 100%, 100% 0, 100% 0
-        );
+    from {
+        opacity: 0;
     }
-
-    100% {
+    to {
         opacity: 1;
-        clip-path: polygon(
-            0 0, 50% 0, 50% 100%, 0 100%,
-            100% 100%, 50% 100%, 50% 0, 100% 0
-        );
     }
 }
-
 @keyframes frappeLogo {
     0% {
         opacity: 0;
