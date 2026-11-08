@@ -105,12 +105,88 @@ button:hover {
   padding: 80px 20px;
 }
 
-.hero-logo {
-    width: min(350px, 80%);
-    height: auto;
-    margin-bottom: 0;
+/* Illustration de la page d'accueil */
+.hero-illustration {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    aspect-ratio: 1968 / 768;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
+/* Le croquis apparaît en premier */
+.hero-croquis {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: apparitionCroquis 2.8s ease-out both;
+}
+
+/* Le logo arrive ensuite, comme un tampon */
+.hero-logo {
+    position: absolute;
+    width: 28%;
+    max-width: 350px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    animation: frappeLogo 0.8s ease-out 2.8s both;
+}
+
+@keyframes apparitionCroquis {
+    from {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes frappeLogo {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -70%) scale(1.6);
+    }
+    65% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.94);
+    }
+    85% {
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Accessibilité : aucune animation si l'utilisateur le demande */
+@media (prefers-reduced-motion: reduce) {
+    .hero-croquis,
+    .hero-logo {
+        animation: none;
+    }
+}
+@media (max-width: 600px) {
+    .hero {
+        min-height: auto;
+        padding: 40px 15px;
+    }
+
+    .hero-illustration {
+        width: 100%;
+    }
+
+    .hero-logo {
+        width: 32%;
+    }
+}
 h1, h2, h3 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: normal;
@@ -233,7 +309,10 @@ footer p { color: #ccc; }
 
 <section class="hero" id="accueil">
 
-  <img src="Logo.png" alt="Logo Willing & Able" class="hero-logo">
+  <div class="hero-illustration">
+  <img src="Croquis-site.png" alt="Croquis architectural" class="hero-croquis">
+  <img src="Logo-détouré.png" alt="Logo Willing & Able" class="hero-logo">
+</div>
 
   <h1>Willing &amp; Able</h1>
 
