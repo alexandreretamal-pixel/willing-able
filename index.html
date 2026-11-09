@@ -247,7 +247,41 @@ h1 {
   font-size: 25px;
   font-style: italic;
 }
+/* Apparition du nom du cabinet */
+.hero-title {
+    animation: apparitionTitre 0.8s ease-out 4.4s both;
+}
 
+@keyframes apparitionTitre {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  /* Apparition du sous-titre */
+.hero-subtitle {
+    animation: apparitionSousTitre 0.8s ease-out 5.2s both;
+}
+
+@keyframes apparitionSousTitre {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  /* Effet machine à écrire pour la devise */
+/* Texte de la devise animé en JavaScript */
+.hero-typed-text {
+    display: inline;
+}
 section {
 padding: 30px 10% 100px;
   scroll-margin-top: 90px;
@@ -349,19 +383,19 @@ footer p { color: #ccc; }
   <img src="Logo-détouré.png" alt="Logo Willing & Able" class="hero-logo">
 </div>
 
-  <h1>Willing &amp; Able</h1>
+  <h1 class="hero-title">Willing &amp; Able</h1>
 
-  <div class="subtitle"
+  <div class="subtitle hero-subtitle"
        data-fr="Laboratoire du droit"
        data-en="Legal Innovation Lab">
     Laboratoire du droit
   </div>
 
-  <div class="tagline"
-       data-fr="Le droit en mouvement."
-       data-en="Law in motion.">
-    Le droit en mouvement.
-  </div>
+  <div class="tagline hero-tagline"
+     data-fr="Le droit en mouvement."
+     data-en="Law in motion.">
+    <span class="hero-typed-text">Le droit en mouvement.</span>
+</div>
 
 </section>
 
@@ -793,13 +827,54 @@ button.addEventListener("click", () => {
   document.documentElement.lang = currentLanguage;
 
   document.querySelectorAll("[data-fr][data-en]").forEach(element => {
-    element.textContent = element.dataset[currentLanguage];
-  });
+    if (element.classList.contains("hero-tagline")) {
+        const span = element.querySelector(".hero-typed-text");
+        if (span) {
+            span.textContent = element.dataset[currentLanguage];
+        }
+    } else {
+        element.textContent = element.dataset[currentLanguage];
+    }
+});
 
   button.textContent = currentLanguage === "fr" ? "EN" : "FR";
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
+  // Animation de la devise : frappe lettre par lettre
+const heroTagline = document.querySelector(".hero-tagline");
+const heroTypedText = document.querySelector(".hero-typed-text");
+
+if (heroTagline && heroTypedText &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+    const initialLanguage = currentLanguage;
+    const initialText = heroTagline.dataset[initialLanguage];
+
+    heroTypedText.textContent = "";
+
+    setTimeout(() => {
+        // Ne pas relancer la frappe si la langue a changé entre-temps
+        if (currentLanguage !== initialLanguage) return;
+
+        let index = 0;
+
+        const typingInterval = setInterval(() => {
+            // Arrêter si l'utilisateur change de langue pendant la frappe
+            if (currentLanguage !== initialLanguage) {
+                clearInterval(typingInterval);
+                return;
+            }
+
+            index++;
+            heroTypedText.textContent = initialText.slice(0, index);
+
+            if (index >= initialText.length) {
+                clearInterval(typingInterval);
+            }
+        }, 100);
+    }, 6000);
+}
 </script>
 
 </body>
