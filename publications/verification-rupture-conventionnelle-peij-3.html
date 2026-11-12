@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vérification juridique PEIJ 3.0 — Rupture conventionnelle et chômage en 2026 | Willing &amp; Able</title>
+
+  <meta name="description" content="Rapport de vérification juridique PEIJ 3.0 relatif à l'article Rupture conventionnelle et chômage en 2026. Audit du 12 novembre 2026. Validation sous réserves.">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
+
+    :root {
+      --black: #202020;
+      --gold: #b39765;
+      --white: #ffffff;
+      --cream: #faf9f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--black);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.8;
+    }
+
+    header {
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid #eee;
+      padding: 20px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: 'Poppins', sans-serif;
+      font-size: 23px;
+      font-weight: 100;
+      letter-spacing: .5px;
+      text-decoration: none;
+      color: var(--black);
+    }
+
+    nav a {
+      color: var(--black);
+      text-decoration: none;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover,
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 75px 25px 100px;
+    }
+
+    .category {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 25px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.2;
+      margin: 0 0 30px;
+    }
+
+    .subtitle {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      line-height: 1.5;
+      color: #555;
+      margin-bottom: 35px;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 2px;
+      background: var(--gold);
+      margin: 35px 0;
+    }
+
+    .metadata {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 35px;
+    }
+
+    .metadata p {
+      margin: 0 0 8px;
+    }
+
+    .resultat {
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      padding: 22px 25px;
+      margin: 35px 0;
+    }
+
+    .resultat p {
+      margin: 0;
+    }
+
+    .article-body {
+      font-size: 16px;
+      overflow-wrap: anywhere;
+    }
+
+    .article-body p {
+      margin: 0 0 22px;
+    }
+
+    .article-body h2 {
+      font-size: 29px;
+      line-height: 1.35;
+      margin: 65px 0 25px;
+    }
+
+    .article-body h3 {
+      font-size: 22px;
+      line-height: 1.4;
+      margin: 40px 0 20px;
+    }
+
+    .article-body h4 {
+      font-size: 18px;
+      line-height: 1.4;
+      margin: 30px 0 15px;
+    }
+
+    .article-body a {
+      color: #765d32;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .article-body a:hover {
+      color: var(--black);
+    }
+
+    .article-body ul,
+    .article-body ol {
+      margin: 0 0 25px;
+      padding-left: 28px;
+    }
+
+    .article-body li {
+      margin-bottom: 9px;
+    }
+
+    .article-body hr {
+      border: 0;
+      border-top: 1px solid #e8e5df;
+      margin: 55px 0;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 30px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    th,
+    td {
+      border: 1px solid #e5e2dc;
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--cream);
+      font-weight: bold;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fdfcfb;
+    }
+
+    .retour {
+      margin: 55px 0 0;
+    }
+
+    .retour a {
+      display: inline-block;
+      padding: 12px 22px;
+      background: #27313d;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .retour a:hover {
+      background: #3c4855;
+    }
+
+    footer {
+      background: var(--cream);
+      border-top: 1px solid #eee;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 18px 5%;
+      }
+
+      .brand {
+        font-size: 19px;
+      }
+
+      nav a {
+        font-size: 10px;
+      }
+
+      main {
+        padding: 50px 20px 75px;
+      }
+
+      .article-body h2 {
+        font-size: 25px;
+      }
+
+      .article-body h3 {
+        font-size: 20px;
+      }
+
+      th,
+      td {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="../index.html">Willing &amp; Able</a>
+
+  <nav>
+    <a href="../index.html#publications">Publications</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="category">Vérification juridique — PEIJ 3.0</div>
+
+  <h1>Audit juridique — Rupture conventionnelle et chômage en 2026</h1>
+
+  <div class="subtitle">
+    Protocole d'Externalisation Instrumentale Juridique
+  </div>
+
+  <div class="gold-line"></div>
+
+  <div class="metadata">
+    <p>PEIJ 3.0 — Mode A — Version du paramétrage : 3.0</p>
+    <p>Date de vérification : 12 novembre 2026</p>
+    <p>Document examiné : « Rupture conventionnelle et chômage en 2026 »</p>
+  </div>
+
+  <article class="article-body">
+
+    <div class="resultat">
+      <p>
+        <strong>Résultat : [VRAISEMBLABLE] Le document est juridiquement exploitable, mais plusieurs précisions et corrections sont nécessaires avant publication.</strong>
+      </p>
+    </div>
+
+    <p>La réforme du 1er septembre 2026 est confirmée par les textes officiels. Les principaux plafonds d'indemnisation mentionnés dans l'article sont également confirmés.</p>
+
+    <p>Deux points nécessitent particulièrement une intervention : le régime des primo-entrants et la présentation des prolongations de droits pour les salariés de 55 ans et plus.</p>
+
+    <hr>
+
+    <h2>1. PHASE A1 — INVENTAIRE</h2>
+
+    <p>Je procède à l'inventaire structuré des éléments factuels et juridiques fournis.</p>
+
+    <h3>1.1. Corpus examiné</h3>
+
+    <p>[CERTAIN] Le document comporte douze sections, une conclusion et une liste de sources.</p>
+
+    <p>Les questions traitées concernent :</p>
+
+    <ol>
+      <li>L'ouverture des droits à l'ARE après une rupture conventionnelle.</li>
+      <li>La réforme entrée en vigueur le 1er septembre 2026.</li>
+      <li>La durée maximale d'indemnisation.</li>
+      <li>Les conditions d'affiliation.</li>
+      <li>Le calcul de l'allocation.</li>
+      <li>Les différés d'indemnisation.</li>
+      <li>Le montant minimal de l'indemnité de rupture.</li>
+      <li>La comparaison avec le licenciement.</li>
+      <li>La procédure de rupture conventionnelle.</li>
+      <li>Les possibilités de contestation.</li>
+    </ol>
+
+    <h3>1.2. Corpus juridique de vérification</h3>
+
+    <p>[CERTAIN] Les textes suivants ont été retrouvés sur Légifrance.</p>
+
+    <p><strong>Source 1 — Loi du 11 juin 2026</strong></p>
+
+    <p>Loi n° 2026-470 du 11 juin 2026, article unique.</p>
+
+    <p>Publication : JORF n° 0136 du 12 juin 2026, texte n° 1.</p>
+
+    <p>NOR : TRSD2606801L.</p>
+
+    <p>Version : initiale.</p>
+
+    <p>
+      <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054237287?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Consulter la loi sur Légifrance</a>
+    </p>
+
+    <p><strong>Source 2 — Code du travail</strong></p>
+
+    <p>Article L. 5422-2.</p>
+
+    <p>Version en vigueur depuis le 13 juin 2026.</p>
+
+    <p>Modification : loi n° 2026-470 du 11 juin 2026.</p>
+
+    <p>
+      <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000054241899/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Consulter l'article L. 5422-2</a>
+    </p>
+
+    <p><strong>Source 3 — Arrêté du 19 juin 2026</strong></p>
+
+    <p>Arrêté portant agrément de l'avenant n° 2 du 10 avril 2026 à la convention d'assurance chômage du 15 novembre 2024.</p>
+
+    <p>Publication : JORF n° 0145 du 23 juin 2026, texte n° 3.</p>
+
+    <p>NOR : TRSD2614637A.</p>
+
+    <p>Version : initiale.</p>
+
+    <p>
+      <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054297458?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Consulter l'arrêté sur Légifrance</a>
+    </p>
+
+    <p><strong>Source 4 — Convention d'assurance chômage</strong></p>
+
+    <p>Convention du 15 novembre 2024, règlement général annexé, dans sa rédaction applicable après les modifications agréées en 2026.</p>
+
+    <p>
+      <a href="https://www.legifrance.gouv.fr/codes/section_lc/JORFTEXT000050797861/LEGISCTA000050800291/2026-10-26/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Consulter la réglementation sur Légifrance</a>
+    </p>
+
+    <p>Ces références constituent le socle normatif de l'analyse.</p>
+
+    <p>Date de consultation des sources : 12 novembre 2026.</p>
+
+    <hr>
+
+    <h2>2. PHASE A2 — QUALIFICATION JURIDIQUE</h2>
+
+    <p>Je construis la matrice faits / droit applicable / discussion.</p>
+
+    <h3>2.1. Vérification des principales affirmations</h3>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Affirmation du document</th>
+            <th>Résultat</th>
+            <th>Observation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Réforme applicable depuis le 1er septembre 2026</td>
+            <td>[CERTAIN]</td>
+            <td>Confirmée</td>
+          </tr>
+          <tr>
+            <td>Loi n° 2026-470 du 11 juin 2026</td>
+            <td>[CERTAIN]</td>
+            <td>Référence exacte</td>
+          </tr>
+          <tr>
+            <td>Arrêté du 19 juin 2026</td>
+            <td>[CERTAIN]</td>
+            <td>Référence exacte</td>
+          </tr>
+          <tr>
+            <td>Plafond de 456 jours avant 55 ans</td>
+            <td>[CERTAIN]</td>
+            <td>Confirmé</td>
+          </tr>
+          <tr>
+            <td>Plafond de 624 jours à partir de 55 ans</td>
+            <td>[CERTAIN]</td>
+            <td>Confirmé</td>
+          </tr>
+          <tr>
+            <td>Prolongation possible après 55 ans</td>
+            <td>[CERTAIN]</td>
+            <td>Conditions à préciser</td>
+          </tr>
+          <tr>
+            <td>Affiliation générale de 130 jours ou 910 heures</td>
+            <td>[CERTAIN]</td>
+            <td>Confirmée</td>
+          </tr>
+          <tr>
+            <td>Affiliation dérogatoire de 108 jours ou 758 heures</td>
+            <td>[CERTAIN]</td>
+            <td>Confirmée</td>
+          </tr>
+          <tr>
+            <td>Calcul de l'ARE selon le droit commun</td>
+            <td>[CERTAIN]</td>
+            <td>Confirmé</td>
+          </tr>
+          <tr>
+            <td>Partie fixe de 13,18 €</td>
+            <td>[À VÉRIFIER]</td>
+            <td>Montant documenté par l'organisme gestionnaire ; validation normative complète à finaliser</td>
+          </tr>
+          <tr>
+            <td>Diviseur de 111,80 € pour 2026</td>
+            <td>[À VÉRIFIER]</td>
+            <td>Montant corroboré par l'Unédic ; version normative consolidée à rattacher</td>
+          </tr>
+          <tr>
+            <td>Différé spécifique plafonné à 150 jours</td>
+            <td>[CERTAIN]</td>
+            <td>Confirmé</td>
+          </tr>
+          <tr>
+            <td>Rétractation de 15 jours calendaires</td>
+            <td>[CERTAIN]</td>
+            <td>Confirmée</td>
+          </tr>
+          <tr>
+            <td>Homologation en 15 jours ouvrables</td>
+            <td>[CERTAIN]</td>
+            <td>Confirmée</td>
+          </tr>
+          <tr>
+            <td>Contestation dans un délai de 12 mois</td>
+            <td>[CERTAIN]</td>
+            <td>Formulation à corriger</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Les résultats [CERTAIN] reposent sur les dispositions identifiées dans les textes officiels, notamment la convention d'assurance chômage, l'arrêté d'agrément et les articles L. 1237-11 à L. 1237-15 du Code du travail.
+      <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054297458" target="_blank" rel="noopener noreferrer">Légifrance</a>
+    </p>
+
+    <hr>
+
+    <h2>3. PHASE A3 — CONSTRUCTION DES RAISONNEMENTS</h2>
+
+    <h3>3.1. Existence juridique de la réforme</h3>
+
+    <h4>PRÉMISSES</h4>
+
+    <p>P1. [CERTAIN] L'article L. 5422-2 du Code du travail prévoit les critères susceptibles de déterminer les durées d'indemnisation.</p>
+
+    <p>P2. [CERTAIN] La loi n° 2026-470 du 11 juin 2026 a modifié cet article.</p>
+
+    <p>P3. [CERTAIN] L'arrêté du 19 juin 2026 a agréé l'avenant n° 2 du 10 avril 2026.</p>
+
+    <p>P4. [CERTAIN] Cet avenant instaure des durées spécifiques pour les ouvertures de droits consécutives aux ruptures conventionnelles individuelles concernées.</p>
+
+    <h4>INFÉRENCE</h4>
+
+    <p>Les modifications législatives et conventionnelles permettent de distinguer les durées maximales d'indemnisation selon le mode de rupture.</p>
+
+    <h4>CONCLUSION</h4>
+
+    <p><strong>[CERTAIN] L'affirmation centrale du document relative à la réforme du 1er septembre 2026 est juridiquement fondée.</strong></p>
+
+    <p>
+      La loi et l'arrêté ont été identifiés dans leurs publications officielles.
+      <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054237287?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Légifrance</a>
+    </p>
+
+    <h3>3.2. Durées maximales d'indemnisation</h3>
+
+    <h4>PRÉMISSES</h4>
+
+    <p>P1. [CERTAIN] La réglementation distingue notamment deux catégories d'âge pour les plafonds spécifiques après rupture conventionnelle individuelle.</p>
+
+    <p>P2. [CERTAIN] Les durées maximales initiales sont de 456 jours avant 55 ans et de 624 jours à partir de 55 ans en France métropolitaine.</p>
+
+    <p>P3. [CERTAIN] Des possibilités de prolongation existent pour les allocataires âgés de 55 ans et plus.</p>
+
+    <h4>INFÉRENCE</h4>
+
+    <p>Les durées spécifiques constituent des plafonds initiaux qui ne doivent pas être confondus avec les durées susceptibles d'être atteintes après prolongation.</p>
+
+    <h4>CONCLUSION</h4>
+
+    <p>[CERTAIN] Le tableau du document est correct concernant les plafonds initiaux.</p>
+
+    <p>[VRAISEMBLABLE] Il serait juridiquement plus précis de distinguer, dans la présentation, le plafond initial et le plafond susceptible d'être atteint après prolongation.</p>
+
+    <h3>3.3. Application dans le temps</h3>
+
+    <h4>PRÉMISSES</h4>
+
+    <p>P1. [CERTAIN] L'entrée en vigueur des nouvelles modalités est fixée au 1er septembre 2026.</p>
+
+    <p>P2. [CERTAIN] La date de fin du contrat constitue le critère temporel retenu pour déterminer l'application des règles spécifiques.</p>
+
+    <p>P3. [CERTAIN] Cette date peut être distincte de la date de signature de la convention.</p>
+
+    <h4>INFÉRENCE</h4>
+
+    <p>Une convention signée avant le 1er septembre 2026 peut conduire à l'application des nouvelles dispositions si la fin du contrat intervient à compter de cette date.</p>
+
+    <h4>CONCLUSION</h4>
+
+    <p>[CERTAIN] La section 3 du document présente correctement le critère temporel.</p>
+
+    <p>La formulation doit néanmoins maintenir la distinction entre ouverture de droits, reprise de droits antérieurs et rechargement.</p>
+
+    <hr>
+
+    <h2>4. PHASE A4 — CORRECTIONS À APPORTER</h2>
+
+    <p>Je produis les propositions rédactionnelles avec balises de vérification.</p>
+
+    <h3>4.1. Première correction : les primo-entrants</h3>
+
+    <p><strong>Section concernée : 1.</strong></p>
+
+    <p>Le document indique :</p>
+
+    <p>« Une exception existe depuis le 1er avril 2026 pour certains demandeurs d'emploi appelés “primo-entrants”. »</p>
+
+    <h4>Analyse</h4>
+
+    <p>[CERTAIN] La condition dérogatoire de cinq mois correspond à 108 jours travaillés ou 758 heures.</p>
+
+    <p>La convention prévoit également une disposition dérogatoire concernant certains salariés saisonniers.</p>
+
+    <p>Le document évoque les primo-entrants, mais ne mentionne pas cette seconde catégorie.</p>
+
+    <p>Il ne précise pas non plus que la réglementation prévoit une durée minimale spécifique d'indemnisation pour les situations relevant de la dérogation.</p>
+
+    <h4>Correction proposée</h4>
+
+    <h4>Combien de temps faut-il avoir travaillé pour toucher le chômage ?</h4>
+
+    <p>[CERTAIN] En principe, l'ouverture des droits à l'allocation d'aide au retour à l'emploi suppose de justifier d'au moins 130 jours travaillés ou 910 heures de travail.</p>
+
+    <p>Cette condition doit être remplie au cours d'une période de référence de 24 mois pour les salariés âgés de moins de 55 ans et de 36 mois pour ceux âgés de 55 ans et plus.</p>
+
+    <p>Depuis le 1er avril 2026, une condition dérogatoire permet à certains demandeurs d'emploi primo-entrants de bénéficier de l'ARE avec 108 jours travaillés ou 758 heures de travail, correspondant à cinq mois.</p>
+
+    <p>Cette dérogation concerne les salariés privés d'emploi n'ayant pas bénéficié d'une précédente ouverture de droits à l'ARE au cours des vingt années précédant leur demande d'allocations.</p>
+
+    <p>Une condition d'affiliation réduite peut également bénéficier à certains salariés justifiant d'une activité exclusivement saisonnière, dans les conditions prévues par la réglementation.</p>
+
+    <p>[CERTAIN] Lorsque le droit est ouvert sur la base de cette affiliation dérogatoire, la durée minimale d'indemnisation prévue par les dispositions correspondantes est de 152 jours calendaires.</p>
+
+    <p>L'application de ces règles suppose de vérifier les conditions particulières de la situation du demandeur d'emploi.</p>
+
+    <p>
+      Fondement : convention d'assurance chômage du 15 novembre 2024, règlement général annexé, article 3, § 1 bis, dans sa rédaction applicable en 2026.
+      <a href="https://www.legifrance.gouv.fr/codes/section_lc/JORFTEXT000050797861/LEGISCTA000050800291/2026-10-26/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Légifrance</a>
+    </p>
+
+    <h3>4.2. Deuxième correction : prolongation après 55 ans</h3>
+
+    <p><strong>Section concernée : 2.</strong></p>
+
+    <p>[CERTAIN] Le document distingue correctement les plafonds initiaux de 624 jours et les durées de droit commun susceptibles d'être atteintes par prolongation.</p>
+
+    <p>Cependant, la phrase selon laquelle les demandeurs d'emploi de 55 ans et plus peuvent « solliciter une prolongation » doit être accompagnée d'une distinction entre la possibilité de demander et le droit effectif à prolongation.</p>
+
+    <h4>Correction proposée</h4>
+
+    <h4>Les salariés de 55 ans et plus peuvent-ils obtenir une prolongation ?</h4>
+
+    <p>[CERTAIN] Depuis le 1er septembre 2026, les demandeurs d'emploi âgés de 55 ans et plus, dont la fin de contrat résulte d'une rupture conventionnelle individuelle relevant des nouvelles règles, sont soumis à une durée maximale initiale d'indemnisation de 624 jours en France métropolitaine.</p>
+
+    <p>Ils peuvent toutefois demander une prolongation de cette durée auprès de France Travail.</p>
+
+    <p>Cette prolongation n'est pas automatique. Elle suppose un examen de la situation individuelle du demandeur d'emploi, notamment au regard des démarches réalisées pour retrouver un emploi ou construire un projet professionnel.</p>
+
+    <p>Sous réserve de remplir les conditions applicables, la prolongation peut permettre d'atteindre les durées maximales de droit commun, soit 685 jours pour les personnes âgées de 55 ou 56 ans et 822 jours pour celles âgées de 57 ans et plus.</p>
+
+    <p>[CERTAIN] Il convient donc de distinguer la durée maximale initialement attribuée et la durée totale susceptible d'être obtenue après prolongation.</p>
+
+    <p>
+      Fondement : avenant n° 2 du 10 avril 2026, agréé par l'arrêté du 19 juin 2026, dispositions relatives aux durées d'indemnisation après rupture conventionnelle individuelle.
+      <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054297458" target="_blank" rel="noopener noreferrer">Légifrance</a>
+    </p>
+
+    <h3>4.3. Troisième correction : montant de l'ARE</h3>
+
+    <p><strong>Section concernée : 4.</strong></p>
+
+    <h4>Vérification arithmétique</h4>
+
+    <p>[CERTAIN] Le calcul figurant dans le document est cohérent dans le cadre des hypothèses retenues.</p>
+
+    <p>Salaire annuel : 30 000 €.</p>
+
+    <p>Salaire journalier indicatif :</p>
+
+    <p>30 000 ÷ 365 = 82,1918 €.</p>
+
+    <p>Première formule :</p>
+
+    <p>82,1918 × 40,4 % + 13,18 = 46,3855 €.</p>
+
+    <p>Deuxième formule :</p>
+
+    <p>82,1918 × 57 % = 46,8493 €.</p>
+
+    <p>La seconde formule donne donc une allocation journalière indicative proche de 46,85 €.</p>
+
+    <p>Sur trente jours :</p>
+
+    <p>46,85 × 30 = 1 405,50 €.</p>
+
+    <h4>Conclusion</h4>
+
+    <p>[CERTAIN] L'exemple est arithmétiquement cohérent.</p>
+
+    <p>[À VÉRIFIER] Le montant de la partie fixe de 13,18 € est corroboré par les informations de l'organisme gestionnaire pour 2026, mais sa traçabilité normative complète doit être ajoutée au corpus de publication.</p>
+
+    <p>[VRAISEMBLABLE] Le calcul doit continuer à être présenté comme une illustration simplifiée, non comme une estimation individuelle opposable.</p>
+
+    <p>Il convient également de conserver l'indication selon laquelle le salaire journalier de référence dépend des périodes retenues et des règles de calcul applicables.</p>
+
+    <h3>4.4. Quatrième correction : différé spécifique</h3>
+
+    <p><strong>Section concernée : 5.</strong></p>
+
+    <p>[CERTAIN] Le principe du différé d'indemnisation spécifique et son plafond de 150 jours figurent dans la réglementation.</p>
+
+    <p>
+      [CERTAIN] Le diviseur de 111,80 € pour l'année 2026 est confirmé dans la documentation publiée par l'Unédic, organisme gestionnaire de l'assurance chômage.
+      <a href="https://www.unedic.org/la-reglementation/fiches-thematiques/differe-dindemnisation-specifique-en-cas-dindemnites-supra-legales?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Unedic</a>
+    </p>
+
+    <p>[À VÉRIFIER] L'intégration de cette valeur dans la chaîne complète des versions réglementaires agréées reste à documenter avant attribution définitive du statut [CERTAIN] au sens strict du protocole.</p>
+
+    <h4>Vérification arithmétique</h4>
+
+    <p>9 000 ÷ 111,80 = 80,50 jours environ.</p>
+
+    <p>Le résultat retenu dans le document est de 80 jours.</p>
+
+    <p>[CERTAIN] Ce résultat correspond à la règle consistant à retenir le nombre entier du quotient.</p>
+
+    <h4>Point de vigilance</h4>
+
+    <p>Le document indique correctement que l'indemnité totale de rupture ne constitue pas nécessairement l'assiette du différé.</p>
+
+    <p>Il convient de conserver cette distinction.</p>
+
+    <p><strong>Conclusion : [VRAISEMBLABLE] Aucune correction substantielle n'est nécessaire sur le principe du calcul, sous réserve de stabiliser la référence normative du diviseur applicable en 2026.</strong></p>
+
+    <hr>
+
+    <h2>5. VÉRIFICATION DE LA PROCÉDURE DE RUPTURE</h2>
+
+    <h3>5.1. Entretien et consentement</h3>
+
+    <p>[CERTAIN] L'article L. 1237-11 du Code du travail dispose :</p>
+
+    <p>« La rupture conventionnelle, exclusive du licenciement ou de la démission, ne peut être imposée par l'une ou l'autre des parties. »</p>
+
+    <p>
+      Référence : Code du travail, article L. 1237-11, version en vigueur depuis le 27 juin 2008, Légifrance, consulté le 12 novembre 2026.
+      <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000019071187/2026-05-15?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Légifrance</a>
+    </p>
+
+    <p>Le document respecte cette distinction.</p>
+
+    <h3>5.2. Rétractation</h3>
+
+    <p>[CERTAIN] L'article L. 1237-13 prévoit un délai de quinze jours calendaires.</p>
+
+    <p>La rédaction du document est conforme sur ce point.</p>
+
+    <h3>5.3. Homologation</h3>
+
+    <p>[CERTAIN] L'article L. 1237-14 fixe un délai d'instruction de quinze jours ouvrables.</p>
+
+    <p>La présentation figurant dans le document est conforme sur ce point.</p>
+
+    <h3>5.4. Délai de contestation</h3>
+
+    <p><strong>Section concernée : 11.</strong></p>
+
+    <p>Le document indique que les recours concernant la convention, son homologation ou un refus d'homologation doivent être introduits dans les douze mois suivant l'homologation ou le refus.</p>
+
+    <p>Cette présentation appelle une correction.</p>
+
+    <h4>PRÉMISSES</h4>
+
+    <p>P1. [CERTAIN] L'article L. 1237-14 définit un contentieux spécifique.</p>
+
+    <p>P2. [CERTAIN] Il prévoit un délai de recours de douze mois.</p>
+
+    <p>P3. [CERTAIN] Le texte fixe expressément le point de départ de ce délai à la date d'homologation de la convention.</p>
+
+    <h4>INFÉRENCE</h4>
+
+    <p>L'extension rédactionnelle du point de départ au refus d'homologation ne résulte pas directement des termes de l'article cité.</p>
+
+    <h4>CONCLUSION</h4>
+
+    <p><strong>[CERTAIN] La formulation du document doit être corrigée pour respecter les termes de l'article L. 1237-14.</strong></p>
+
+    <p>Proposition :</p>
+
+    <p>« En application de l'article L. 1237-14 du Code du travail, le recours juridictionnel concernant la convention de rupture doit être formé, à peine d'irrecevabilité, avant l'expiration d'un délai de douze mois à compter de la date d'homologation. »</p>
+
+    <p>[À VÉRIFIER] Les modalités contentieuses particulières applicables à une décision de refus d'homologation doivent être étudiées séparément avant de leur attribuer le même point de départ.</p>
+
+    <p>
+      Référence : Code du travail, article L. 1237-14, version en vigueur depuis le 27 juin 2008, Légifrance, consulté le 12 novembre 2026.
+      <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000019071180/2026-06-04?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Légifrance</a>
+    </p>
+
+    <hr>
+
+    <h2>6. VÉRIFICATION DES INDEMNITÉS DE RUPTURE</h2>
+
+    <h3>6.1. Montant minimal</h3>
+
+    <p>[CERTAIN] L'article L. 1237-13 du Code du travail renvoie à l'indemnité prévue à l'article L. 1234-9.</p>
+
+    <p>Le document rappelle correctement les proportions de référence :</p>
+
+    <ul>
+      <li>Un quart de mois de salaire par année d'ancienneté pour les dix premières années.</li>
+      <li>Un tiers de mois de salaire par année d'ancienneté au-delà.</li>
+    </ul>
+
+    <p>[CERTAIN] Le calcul illustratif de 6 000 € pour huit années d'ancienneté et un salaire de référence de 3 000 € est arithmétiquement correct.</p>
+
+    <h3>6.2. Indemnité conventionnelle</h3>
+
+    <p>[VRAISEMBLABLE] La formulation retenue dans le document est adaptée en ce qu'elle appelle à vérifier les dispositions conventionnelles applicables.</p>
+
+    <p>Il faut cependant distinguer trois éléments :</p>
+
+    <ol>
+      <li>Le minimum légal résultant du Code du travail.</li>
+      <li>Les dispositions conventionnelles ou collectives effectivement applicables.</li>
+      <li>Le minimum retenu pour calculer le différé d'indemnisation spécifique.</li>
+    </ol>
+
+    <p>[CERTAIN] Ces éléments ne sont pas juridiquement interchangeables.</p>
+
+    <p>[À VÉRIFIER] L'application éventuelle de l'accord national interprofessionnel du 11 janvier 2008 et de ses avenants doit être déterminée selon le champ professionnel concerné.</p>
+
+    <hr>
+
+    <h2>7. PHASE A5 — AUTO-CRIBLAGE</h2>
+
+    <p>Je procède à l'auto-criblage avant transmission éventuelle à l'Agent B.</p>
+
+    <h3>7.1. Contrôle des sources</h3>
+
+    <p><strong>Résultat : conformité partielle.</strong></p>
+
+    <p>[CERTAIN] La loi du 11 juin 2026, l'arrêté du 19 juin 2026 et les principales dispositions du Code du travail ont été retrouvés sur Légifrance.</p>
+
+    <p>[À VÉRIFIER] La consolidation des références relatives à certains paramètres chiffrés de l'ARE et du différé spécifique doit être complétée.</p>
+
+    <h3>7.2. Contrôle du corpus</h3>
+
+    <p><strong>Résultat : conforme au périmètre matériel du document.</strong></p>
+
+    <p>[CERTAIN] L'analyse a été limitée au droit français de la rupture conventionnelle individuelle et de l'assurance chômage en 2026.</p>
+
+    <p>Les informations issues de l'Unédic ont servi à identifier des points réglementaires, mais ne sont pas retenues comme substituts aux références normatives exigées par le protocole PEIJ.</p>
+
+    <h3>7.3. Continuité des chaînes déductives</h3>
+
+    <p><strong>Résultat : trois réserves.</strong></p>
+
+    <ol>
+      <li>[À VÉRIFIER] Les conditions détaillées de prolongation des droits des allocataires de 55 ans et plus.</li>
+      <li>[À VÉRIFIER] La traçabilité normative des paramètres chiffrés de 2026.</li>
+      <li>[À VÉRIFIER] Le régime contentieux particulier du refus d'homologation.</li>
+    </ol>
+
+    <h3>7.4. Contrôle lexical</h3>
+
+    <p><strong>Résultat : corrections nécessaires dans le document initial.</strong></p>
+
+    <p>Plusieurs expressions ne respectent pas le style PEIJ :</p>
+
+    <ul>
+      <li>« Il est donc important de… »</li>
+      <li>« Il est indispensable de… »</li>
+      <li>« Ces interrogations sont essentielles… »</li>
+      <li>« Il s'agit d'un point particulièrement important. »</li>
+    </ul>
+
+    <p>Ces formulations peuvent être conservées dans un article destiné au grand public si celui-ci ne doit pas reproduire le style PEIJ. En revanche, elles doivent être supprimées dans une version destinée à satisfaire strictement au protocole.</p>
+
+    <hr>
+
+    <h2>8. CONCLUSION DE L'AGENT A</h2>
+
+    <h3>8.1. Synthèse</h3>
+
+    <h4>PRÉMISSES</h4>
+
+    <p>P1. [CERTAIN] La réforme du 1er septembre 2026 est établie par des textes officiels.</p>
+
+    <p>P2. [CERTAIN] Les principaux plafonds d'indemnisation sont correctement présentés dans le document.</p>
+
+    <p>P3. [CERTAIN] Les principes relatifs à l'ouverture des droits, à l'indemnisation après rupture conventionnelle et à la procédure de rupture disposent d'un fondement normatif identifié.</p>
+
+    <p>P4. [CERTAIN] La présentation du délai contentieux nécessite une correction.</p>
+
+    <p>P5. [VRAISEMBLABLE] Plusieurs développements peuvent être renforcés par des précisions sur les conditions d'application des régimes dérogatoires.</p>
+
+    <h4>INFÉRENCES</h4>
+
+    <p>La présence de fondements normatifs pour les affirmations centrales permet de conserver l'architecture générale de l'article.</p>
+
+    <p>Les réserves identifiées imposent néanmoins certaines corrections avant stabilisation de sa rédaction.</p>
+
+    <h4>CONCLUSIONS</h4>
+
+    <p><strong>[VRAISEMBLABLE] L'article peut être conservé dans sa structure actuelle.</strong></p>
+
+    <p>Les corrections prioritaires concernent :</p>
+
+    <ol>
+      <li>L'ajout des règles spécifiques applicables à certains travailleurs saisonniers et de la durée minimale de 152 jours pour les situations concernées.</li>
+      <li>La distinction entre plafond initial d'indemnisation et prolongation possible après 55 ans.</li>
+      <li>La correction du passage relatif au délai de contestation.</li>
+      <li>La consolidation des références normatives des montants chiffrés applicables en 2026.</li>
+    </ol>
+
+    <h3>8.2. Statut de validation</h3>
+
+    <div class="resultat">
+      <p><strong>DÉCISION DE L'AGENT A : VALIDATION SOUS RÉSERVES.</strong></p>
+    </div>
+
+    <p>[CERTAIN] La réforme et ses principaux effets juridiques sont établis.</p>
+
+    <p>[VRAISEMBLABLE] Le document peut être préparé pour publication après les corrections identifiées.</p>
+
+    <p>[À VÉRIFIER] Une validation juridique intégrale suppose encore l'examen article par article de l'ensemble des dispositions conventionnelles et de leurs versions applicables au 12 novembre 2026.</p>
+
+    <p>Le présent contrôle ne vaut donc pas certificat de conformité intégrale du document.</p>
+
+    <h3>8.3. Transmission</h3>
+
+    <p>La phase de production et de vérification A est clôturée.</p>
+
+    <p><strong>Le document peut être soumis à l'Agent B pour une contradiction indépendante</strong>, portant notamment sur les conditions de prolongation, le calcul du salaire journalier de référence, les différés d'indemnisation et le régime contentieux.</p>
+
+    <hr>
+
+    <p><strong>Points [À VÉRIFIER] :</strong></p>
+
+    <ol>
+      <li>Version normative consolidée établissant les paramètres chiffrés de calcul de l'ARE au 12 novembre 2026.</li>
+      <li>Référence normative complète du diviseur de 111,80 € applicable en 2026.</li>
+      <li>Conditions réglementaires détaillées de prolongation des droits après 55 ans.</li>
+      <li>Régime procédural applicable au refus d'homologation.</li>
+      <li>Articulation des minima légaux et conventionnels de l'indemnité de rupture.</li>
+      <li>Vérification exhaustive des dispositions réglementaires non examinées dans le présent contrôle.</li>
+    </ol>
+
+  </article>
+
+  <div class="retour">
+    <a href="rupture-conventionnelle-chomage-2026.html">
+      ← Retour à l'article
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div>WILLING &amp; ABLE – LABORATOIRE DU DROIT</div>
+  <p>SELARL au capital de 1 000 € – RCS Paris 894 031 665</p>
+  <p>© Willing &amp; Able</p>
+  <p><a href="../mentions-legales.html">Mentions légales</a></p>
+</footer>
+
+</body>
+</html>
