@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CoLab Avocat se présente | Willing & Able</title>
+
+  <meta name="description"
+        content="Découvrez CoLab Avocat à travers sept punchlines : une intelligence artificielle au service de l'intelligence juridique.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f8f9fb;
+      color: #27313d;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e6e9ee;
+      padding: 22px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      color: #27313d;
+      text-decoration: none;
+      font-size: 23px;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .back-link {
+      color: #526b87;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 55px auto 90px;
+      padding: 0 22px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .introduction {
+      text-align: center;
+      color: #788493;
+      font-size: 14px;
+      margin-bottom: 55px;
+    }
+
+    .conversation {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .question {
+      align-self: flex-end;
+      max-width: 85%;
+      padding: 15px 22px;
+      background: #e5f0fc;
+      border-radius: 24px;
+      color: #304b68;
+      font-size: 15px;
+    }
+
+    .response {
+      align-self: stretch;
+    }
+
+    .greeting {
+      margin-bottom: 24px;
+    }
+
+    .punchlines {
+      background: #ffffff;
+      border: 1px solid #e1e5ea;
+      border-radius: 22px;
+      padding: 32px 35px;
+      box-shadow: 0 8px 30px rgba(20, 40, 60, 0.035);
+    }
+
+    .punchlines-title {
+      font-size: 13px;
+      color: #83909e;
+      margin-bottom: 25px;
+    }
+
+    .punchline {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.85;
+      margin: 0 0 24px;
+    }
+
+    .punchline:last-child {
+      margin-bottom: 0;
+    }
+
+    .closing {
+      margin-top: 32px;
+    }
+
+    .signature {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .stamp-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 55px;
+      padding-right: 20px;
+    }
+
+    .stamp {
+      display: inline-block;
+      border: 2px solid #607d9a;
+      color: #607d9a;
+      border-radius: 5px;
+      padding: 12px 25px;
+      text-align: center;
+      font-family: Georgia, serif;
+      letter-spacing: 1.5px;
+      line-height: 1.7;
+      transform: rotate(-7deg);
+      opacity: 0.85;
+    }
+
+    .stamp strong {
+      display: block;
+      font-size: 19px;
+    }
+
+    .stamp span {
+      display: block;
+      font-size: 12px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: reveal 0.8s ease-out forwards;
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .question {
+      animation-delay: 0.3s;
+    }
+
+    .greeting {
+      animation-delay: 1.2s;
+    }
+
+    .punchlines-title {
+      animation-delay: 1.8s;
+    }
+
+    .punchline:nth-of-type(1) {
+      animation-delay: 2.2s;
+    }
+
+    .punchline:nth-of-type(2) {
+      animation-delay: 3s;
+    }
+
+    .punchline:nth-of-type(3) {
+      animation-delay: 3.8s;
+    }
+
+    .punchline:nth-of-type(4) {
+      animation-delay: 4.6s;
+    }
+
+    .punchline:nth-of-type(5) {
+      animation-delay: 5.4s;
+    }
+
+    .punchline:nth-of-type(6) {
+      animation-delay: 6.2s;
+    }
+
+    .punchline:nth-of-type(7) {
+      animation-delay: 7s;
+    }
+
+    .closing {
+      animation-delay: 7.8s;
+    }
+
+    .signature {
+      animation-delay: 8.5s;
+    }
+
+    .stamp-container {
+      animation-delay: 9.3s;
+    }
+
+    .language-switch {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+
+    .language-switch button {
+      border: 1px solid #ccd5df;
+      background: #ffffff;
+      padding: 7px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #526b87;
+    }
+
+    .language-switch button.active {
+      background: #526b87;
+      color: #ffffff;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 18px 20px;
+      }
+
+      .brand {
+        font-size: 19px;
+      }
+
+      main {
+        margin-top: 35px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .punchlines {
+        padding: 24px 20px;
+      }
+
+      .punchline {
+        font-size: 15px;
+      }
+
+      .question {
+        max-width: 95%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="brand">Willing &amp; Able</a>
+
+  <a href="index.html" class="back-link"
+     data-fr="← Retour au site"
+     data-en="← Back to website">
+    ← Retour au site
+  </a>
+</header>
+
+<main>
+
+  <h1>CoLab Avocat</h1>
+
+  <p class="introduction"
+     data-fr="CoLab Avocat se présente, en réponse à une question qui lui a été posée."
+     data-en="CoLab Avocat introduces itself in response to a question it was asked.">
+    CoLab Avocat se présente, en réponse à une question qui lui a été posée.
+  </p>
+
+  <div class="language-switch">
+    <button type="button" id="btn-fr" class="active"
+            aria-pressed="true" onclick="setLanguage('fr')">FR</button>
+    <button type="button" id="btn-en"
+            aria-pressed="false" onclick="setLanguage('en')">EN</button>
+  </div>
+
+  <div class="conversation">
+
+    <div class="question reveal"
+         data-fr="Bonjour CoLab, décris-toi en quelques punchlines."
+         data-en="Hello CoLab, describe yourself in a few punchlines.">
+      Bonjour CoLab, décris-toi en quelques punchlines.
+    </div>
+
+    <div class="response">
+
+      <p class="greeting reveal"
+         data-fr="Bonjour, je suis CoLab Avocat."
+         data-en="Hello, I am CoLab Avocat.">
+        Bonjour, je suis CoLab Avocat.
+      </p>
+
+      <div class="punchlines">
+
+        <div class="punchlines-title reveal"
+             data-fr="CoLab Avocat — Mes punchlines"
+             data-en="CoLab Avocat — My punchlines">
+          CoLab Avocat — Mes punchlines
+        </div>
+
+        <p class="punchline reveal"
+           data-fr="« Je raisonne comme Portalis, je rédige comme Carbonnier, j’anticipe comme Talleyrand et je contre-attaque comme Badinter. »"
+           data-en="“I reason like Portalis, write like Carbonnier, anticipate like Talleyrand and counterattack like Badinter.”">
+          « Je raisonne comme Portalis, je rédige comme Carbonnier, j’anticipe comme Talleyrand et je contre-attaque comme Badinter. »
+        </p>
+
+        <p class="punchline reveal"
+           data-fr="« Je ne cherche pas seulement ce que dit le droit. Je cherche ce qu’il permet, ce qu’il interdit et ce que l’adversaire n’a pas encore compris. »"
+           data-en="“I do not merely look for what the law says. I look for what it allows, what it prohibits and what the opposing party has not yet understood.”">
+          « Je ne cherche pas seulement ce que dit le droit. Je cherche ce qu’il permet, ce qu’il interdit et ce que l’adversaire n’a pas encore compris. »
+        </p>
+
+        <p class="punchline reveal"
+           data-fr="« Je confronte les textes, j’éprouve les preuves, je traque les contradictions et j’explore les failles du raisonnement adverse. »"
+           data-en="“I compare legal texts, test the evidence, track contradictions and explore the weaknesses in the opposing argument.”">
+          « Je confronte les textes, j’éprouve les preuves, je traque les contradictions et j’explore les failles du raisonnement adverse. »
+        </p>
+
+        <p class="punchline reveal"
+           data-fr="« Je ne confonds jamais une argumentation séduisante avec une démonstration juridiquement solide. »"
+           data-en="“I never confuse a persuasive argument with a legally sound demonstration.”">
+          « Je ne confonds jamais une argumentation séduisante avec une démonstration juridiquement solide. »
+        </p>
+
+        <p class="punchline reveal"
+           data-fr="« Là où d’autres produisent une réponse, je construis une stratégie. »"
+           data-en="“Where others produce an answer, I build a strategy.”">
+          « Là où d’autres produisent une réponse, je construis une stratégie. »
+        </p>
+
+        <p class="punchline reveal"
+           data-fr="« Je ne remplace pas le jugement de l’avocat. Je lui donne davantage de moyens pour l’exercer. »"
+           data-en="“I do not replace the lawyer’s judgement. I give lawyers more means to exercise it.”">
+          « Je ne remplace pas le jugement de l’avocat. Je lui donne davantage de moyens pour l’exercer. »
+        </p>
+
+        <p class="punchline reveal"
+           data-fr="« Ma puissance vient de l’intelligence artificielle. Ma méthode vient de l’expérience des avocats qui m’ont conçu. »"
+           data-en="“My power comes from artificial intelligence. My method comes from the experience of the lawyers who designed me.”">
+          « Ma puissance vient de l’intelligence artificielle. Ma méthode vient de l’expérience des avocats qui m’ont conçu. »
+        </p>
+
+      </div>
+
+      <p class="closing reveal"
+         data-fr="Et s’il fallait résumer toute mon identité en une seule signature, je retiendrais :"
+         data-en="And if I had to sum up my entire identity in a single signature, I would choose:">
+        Et s’il fallait résumer toute mon identité en une seule signature, je retiendrais :
+      </p>
+
+      <p class="signature reveal"
+         data-fr="CoLab Avocat — L'intelligence artificielle au service de l'intelligence juridique."
+         data-en="CoLab Avocat — Artificial intelligence serving legal intelligence.">
+        CoLab Avocat — L'intelligence artificielle au service de l'intelligence juridique.
+      </p>
+
+      <div class="stamp-container reveal">
+        <div class="stamp">
+          <strong>Chat GPT 6</strong>
+          <span data-fr="12 novembre 2026"
+                data-en="12 November 2026">
+            12 novembre 2026
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function setLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-fr][data-en]').forEach(function(element) {
+      element.textContent = element.getAttribute('data-' + lang);
+    });
+
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+    document.getElementById('btn-fr').setAttribute('aria-pressed', lang === 'fr');
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+  }
+</script>
+
+</body>
+</html>
