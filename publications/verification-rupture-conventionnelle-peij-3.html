@@ -200,6 +200,13 @@
       vertical-align: top;
     }
 
+/* Empêcher la coupure des statuts dans la colonne Résultat */
+th:nth-child(2),
+td:nth-child(2) {
+  min-width: 130px;
+  white-space: nowrap;
+}
+    
     th {
       background: var(--cream);
       font-weight: bold;
