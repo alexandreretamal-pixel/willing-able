@@ -129,36 +129,16 @@
       font-size: 17px;
     }
 
-    .stamp-container {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 55px;
-      padding-right: 20px;
-    }
+.colab-date {
+  margin-top: 12px;
+  text-align: right;
+  font-size: 13px;
+  color: #788493;
+}
 
-    .stamp {
-      display: inline-block;
-      border: 2px solid #607d9a;
-      color: #607d9a;
-      border-radius: 5px;
-      padding: 12px 25px;
-      text-align: center;
-      font-family: Georgia, serif;
-      letter-spacing: 1.5px;
-      line-height: 1.7;
-      transform: rotate(-7deg);
-      opacity: 0.85;
-    }
-
-    .stamp strong {
-      display: block;
-      font-size: 19px;
-    }
-
-    .stamp span {
-      display: block;
-      font-size: 12px;
-    }
+.colab-date {
+  animation-delay: 9.3s;
+}
 
     .reveal {
       opacity: 0;
@@ -283,6 +263,31 @@
         animation: none;
       }
     }
+    /* Animation de frappe CoLab */
+
+.greeting,
+.punchline,
+.closing,
+.signature {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Curseur de frappe */
+
+.typing-cursor::after {
+  content: "▋";
+  display: inline;
+  color: #607d9a;
+  animation: cursorBlink 0.7s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
   </style>
 </head>
 
@@ -395,15 +400,13 @@
         CoLab Avocat — L'intelligence artificielle au service de l'intelligence juridique.
       </p>
 
-      <div class="stamp-container reveal">
-        <div class="stamp">
-          <strong>Chat GPT 6</strong>
-          <span data-fr="12 novembre 2026"
-                data-en="12 November 2026">
-            12 novembre 2026
-          </span>
-        </div>
-      </div>
+<p class="colab-date reveal">
+  <em>
+    Chat GPT 6 —
+    <span data-fr="12 novembre 2026"
+          data-en="12 November 2026">12 novembre 2026</span>
+  </em>
+</p>
 
     </div>
   </div>
@@ -411,9 +414,31 @@
 </main>
 
 <script>
+  let currentLanguage = 'fr';
+  let typingTimer = null;
+  let typingStarted = false;
+
+  const typingElements = [
+    ...document.querySelectorAll('.greeting, .punchline, .closing, .signature')
+  ];
+
+  const originalTexts = typingElements.map(element => ({
+    element: element,
+    fr: element.getAttribute('data-fr'),
+    en: element.getAttribute('data-en')
+  }));
+
   function setLanguage(lang) {
+    currentLanguage = lang;
     document.documentElement.lang = lang;
 
+    // Interrompre proprement une éventuelle animation.
+    if (typingTimer !== null) {
+      clearTimeout(typingTimer);
+      typingTimer = null;
+    }
+
+    // Afficher immédiatement le texte complet dans la langue choisie.
     document.querySelectorAll('[data-fr][data-en]').forEach(function(element) {
       element.textContent = element.getAttribute('data-' + lang);
     });
@@ -423,7 +448,60 @@
 
     document.getElementById('btn-fr').setAttribute('aria-pressed', lang === 'fr');
     document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+
+    // Ne pas relancer la frappe lors du changement de langue.
+    typingStarted = true;
   }
+
+  function startTyping() {
+    if (typingStarted) return;
+
+    typingStarted = true;
+
+    const reducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    if (reducedMotion) return;
+
+    // Désactiver les anciennes animations CSS sur les textes concernés.
+    typingElements.forEach(function(element) {
+      element.style.animation = 'none';
+      element.style.opacity = '1';
+      element.style.transform = 'none';
+      element.textContent = '';
+    });
+
+    let elementIndex = 0;
+    let characterIndex = 0;
+
+    function typeNextCharacter() {
+      if (elementIndex >= originalTexts.length) {
+        typingTimer = null;
+        return;
+      }
+
+      const item = originalTexts[elementIndex];
+      const text = item[currentLanguage];
+
+      if (characterIndex < text.length) {
+        item.element.textContent += text.charAt(characterIndex);
+        characterIndex++;
+
+        typingTimer = setTimeout(typeNextCharacter, 15);
+      } else {
+        elementIndex++;
+        characterIndex = 0;
+
+        typingTimer = setTimeout(typeNextCharacter, 250);
+      }
+    }
+
+    // Laisser apparaître la question avant le début de la réponse.
+    typingTimer = setTimeout(typeNextCharacter, 900);
+  }
+
+  window.addEventListener('load', startTyping);
 </script>
 
 </body>
