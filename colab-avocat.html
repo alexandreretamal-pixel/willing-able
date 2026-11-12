@@ -343,7 +343,7 @@
         Bonjour, je suis CoLab Avocat.
       </p>
 
-      <div class="punchlines">
+      <div class="punchlines" id="colab-response-box">
 
         <div class="punchlines-title reveal"
              data-fr="CoLab Avocat — Mes punchlines"
@@ -454,6 +454,12 @@
 
     showCompleteText(lang);
 
+const responseBox = document.getElementById('colab-response-box');
+
+if (responseBox) {
+  responseBox.style.display = '';
+}
+    
     // Afficher tous les éléments, même si une animation était en cours.
     document.querySelectorAll('.reveal').forEach(function(element) {
       element.style.animation = 'none';
@@ -478,7 +484,7 @@
     }
 
     const sequence = [
-      { element: question, speed: 75, pause: 650 },
+       { element: question, speed: 75, pause: 350 },
       ...responseElements.map(function(element) {
         return { element: element, speed: 12, pause: 180 };
       })
@@ -499,6 +505,12 @@
       dateElement.style.display = 'none';
     }
 
+const responseBox = document.getElementById('colab-response-box');
+
+if (responseBox) {
+  responseBox.style.display = 'none';
+}
+    
     let itemIndex = 0;
     let charIndex = 0;
 
@@ -522,12 +534,17 @@
         charIndex++;
 
         typingTimer = setTimeout(typeNext, item.speed);
-      } else {
-        itemIndex++;
-        charIndex = 0;
+     } else {
+  // La question vient de se terminer.
+  if (itemIndex === 0 && responseBox) {
+    responseBox.style.display = '';
+  }
 
-        typingTimer = setTimeout(typeNext, item.pause);
-      }
+  itemIndex++;
+  charIndex = 0;
+
+  typingTimer = setTimeout(typeNext, item.pause);
+}
     }
 
     typingTimer = setTimeout(typeNext, 450);
