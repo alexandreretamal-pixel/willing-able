@@ -288,6 +288,16 @@
     opacity: 0;
   }
 }
+    /* Les textes sont pilotés par JavaScript pendant la frappe. */
+.question,
+.greeting,
+.punchline,
+.closing,
+.signature {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
   </style>
 </head>
 
@@ -418,29 +428,40 @@
   let typingTimer = null;
   let typingStarted = false;
 
-  const typingElements = [
-    ...document.querySelectorAll('.greeting, .punchline, .closing, .signature')
+  const question = document.querySelector('.question');
+
+  const responseElements = [
+    ...document.querySelectorAll(
+      '.greeting, .punchline, .closing, .signature'
+    )
   ];
 
-  const originalTexts = typingElements.map(element => ({
-    element: element,
-    fr: element.getAttribute('data-fr'),
-    en: element.getAttribute('data-en')
-  }));
+  const dateElement = document.querySelector('.colab-date');
+
+  function showCompleteText(lang) {
+    document.querySelectorAll('[data-fr][data-en]').forEach(function(element) {
+      element.textContent = element.getAttribute('data-' + lang);
+    });
+  }
 
   function setLanguage(lang) {
     currentLanguage = lang;
     document.documentElement.lang = lang;
 
-    // Interrompre proprement une éventuelle animation.
     if (typingTimer !== null) {
       clearTimeout(typingTimer);
       typingTimer = null;
     }
 
-    // Afficher immédiatement le texte complet dans la langue choisie.
-    document.querySelectorAll('[data-fr][data-en]').forEach(function(element) {
-      element.textContent = element.getAttribute('data-' + lang);
+    typingStarted = true;
+
+    showCompleteText(lang);
+
+    // Afficher tous les éléments, même si une animation était en cours.
+    document.querySelectorAll('.reveal').forEach(function(element) {
+      element.style.animation = 'none';
+      element.style.opacity = '1';
+      element.style.transform = 'none';
     });
 
     document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
@@ -448,9 +469,6 @@
 
     document.getElementById('btn-fr').setAttribute('aria-pressed', lang === 'fr');
     document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
-
-    // Ne pas relancer la frappe lors du changement de langue.
-    typingStarted = true;
   }
 
   function startTyping() {
@@ -458,47 +476,64 @@
 
     typingStarted = true;
 
-    const reducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
 
-    if (reducedMotion) return;
+    const sequence = [
+      { element: question, speed: 75, pause: 650 },
+      ...responseElements.map(function(element) {
+        return { element: element, speed: 12, pause: 180 };
+      })
+    ];
 
-    // Désactiver les anciennes animations CSS sur les textes concernés.
-    typingElements.forEach(function(element) {
-      element.style.animation = 'none';
-      element.style.opacity = '1';
-      element.style.transform = 'none';
-      element.textContent = '';
+    // Masquer tous les textes qui seront tapés.
+    sequence.forEach(function(item) {
+      item.text = item.element.getAttribute('data-' + currentLanguage);
+      item.element.textContent = '';
+      item.element.style.animation = 'none';
+      item.element.style.opacity = '1';
+      item.element.style.transform = 'none';
     });
 
-    let elementIndex = 0;
-    let characterIndex = 0;
+    // La date n'apparaîtra qu'à la fin.
+    if (dateElement) {
+      dateElement.style.animation = 'none';
+      dateElement.style.display = 'none';
+    }
 
-    function typeNextCharacter() {
-      if (elementIndex >= originalTexts.length) {
+    let itemIndex = 0;
+    let charIndex = 0;
+
+    function typeNext() {
+      if (itemIndex >= sequence.length) {
         typingTimer = null;
+
+        if (dateElement) {
+          dateElement.style.display = '';
+          dateElement.style.opacity = '1';
+          dateElement.style.transform = 'none';
+        }
+
         return;
       }
 
-      const item = originalTexts[elementIndex];
-      const text = item[currentLanguage];
+      const item = sequence[itemIndex];
 
-      if (characterIndex < text.length) {
-        item.element.textContent += text.charAt(characterIndex);
-        characterIndex++;
+      if (charIndex < item.text.length) {
+        item.element.textContent += item.text.charAt(charIndex);
+        charIndex++;
 
-        typingTimer = setTimeout(typeNextCharacter, 15);
+        typingTimer = setTimeout(typeNext, item.speed);
       } else {
-        elementIndex++;
-        characterIndex = 0;
+        itemIndex++;
+        charIndex = 0;
 
-        typingTimer = setTimeout(typeNextCharacter, 250);
+        typingTimer = setTimeout(typeNext, item.pause);
       }
     }
 
-    // Laisser apparaître la question avant le début de la réponse.
-    typingTimer = setTimeout(typeNextCharacter, 900);
+    typingTimer = setTimeout(typeNext, 450);
   }
 
   window.addEventListener('load', startTyping);
