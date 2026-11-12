@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mentions légales — Willing & Able</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -21,11 +22,15 @@
       border-bottom: 1px solid #e8e1d3;
     }
 
-    .brand {
-      font-size: 28px;
-      font-weight: 300;
-      letter-spacing: 3px;
-    }
+.brand {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  color: inherit;
+  text-decoration: none;
+}
 
     .lang-buttons {
       margin-top: 15px;
@@ -73,7 +78,7 @@
 
 <body>
   <header>
-    <div class="brand">Willing &amp; Able</div>
+    <a href="index.html" class="brand">Willing &amp; Able</a>
     <div class="lang-buttons">
       <button type="button" onclick="setLanguage('fr')">FR</button>
       <button type="button" onclick="setLanguage('en')">EN</button>
